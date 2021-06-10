@@ -49,6 +49,8 @@ public class ConectionMysql {
 		}
 	}
 	
+	
+	
 	 //Método que fecha sua conexão//
 
     public static boolean fecharConexao() {
