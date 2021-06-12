@@ -15,21 +15,13 @@ public class ConectionMysql {
 		
 		try {
 
-			// Carregando o JDBC Driver padrão
-
 			String driverName = "com.mysql.cj.jdbc.Driver";
 			Class.forName(driverName);
 
-			// Configurando a nossa conexão com um banco de dados//
-
-			String serverName = "localhost"; // caminho do servidor do BD
-			String mydatabase = "mysql"; // nome do seu banco de dados
 			String url = "jdbc:mysql://" + "localhost" + "/" + "loja";
-			String username = "root"; // nome de um usuário de seu BD
-			String password = "root"; // sua senha de acesso
+			String username = "root";
+			String password = "root";
 			connection = DriverManager.getConnection(url, username, password);
-
-			// Testa sua conexão//
 
 			if (connection != null) {
 				System.out.println(("STATUS--->Conectado com sucesso!"));
@@ -43,16 +35,11 @@ public class ConectionMysql {
 			return null;
 
 		} catch (SQLException e) {
-			//Não conseguindo se conectar ao banco
 			System.out.println("Nao foi possivel conectar ao Banco de Dados.");
 			return null;
 		}
 	}
 	
-	
-	
-	 //Método que fecha sua conexão//
-
     public static boolean fecharConexao() {
 
         try {
@@ -63,10 +50,7 @@ public class ConectionMysql {
         }
     }
 
-   //Método que reinicia sua conexão//
-
     public static java.sql.Connection reiniciarConexao() {
-
     	fecharConexao();
         return ConectionMysql.getConexaoMySQL();
     }

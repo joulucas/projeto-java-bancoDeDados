@@ -1,0 +1,13 @@
+
+e
+java:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(×ì×
+Q
+java:S1854"6Remove this useless assignment to local variable "df".(­ÈÉäıÿÿÿÿ
+Z
+java:S1854"=Remove this useless assignment to local variable "conection".(äÈ«8àÚŸæŸ/
+D
+java:S2440".Remove this instantiation of "ConectionMysql".(äÈ«
+K
+java:S1481".Remove this unused "conection" local variable.(äÈ«8éÚŸæŸ/
+B
+java:S1481"'Remove this unused "df" local variable.(­ÈÉäıÿÿÿÿ
