@@ -3,7 +3,7 @@ package br.com.sistemaloja.run;
 import java.text.ParseException;
 import java.util.Scanner;
 
-import business.impl.ClienteServiceImpl;
+import br.com.sistemaloja.business.impl.ClienteServiceImpl;
 
 public class Principal {
 

@@ -1,6 +1,4 @@
-package business;
-
-import java.util.Date;
+package br.com.sistemaloja.business;
 
 import br.com.sistemaloja.domain.Cliente;
 
