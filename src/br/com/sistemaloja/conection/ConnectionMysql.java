@@ -4,9 +4,9 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class ConectionMysql {
+public class ConnectionMysql {
 
-	public ConectionMysql() {
+	public ConnectionMysql() {
 	}
 
 	public static java.sql.Connection getConexaoMySQL() {
@@ -43,7 +43,7 @@ public class ConectionMysql {
     public static boolean fecharConexao() {
 
         try {
-        	ConectionMysql.getConexaoMySQL().close();
+        	ConnectionMysql.getConexaoMySQL().close();
             return true;
         } catch (SQLException e) {
             return false;
@@ -52,6 +52,6 @@ public class ConectionMysql {
 
     public static java.sql.Connection reiniciarConexao() {
     	fecharConexao();
-        return ConectionMysql.getConexaoMySQL();
+        return ConnectionMysql.getConexaoMySQL();
     }
 }

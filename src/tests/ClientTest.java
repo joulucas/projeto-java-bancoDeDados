@@ -11,33 +11,37 @@ import java.time.LocalDate;
 
 import org.junit.Test;
 
-import br.com.sistemaloja.conection.ConectionMysql;
+import br.com.sistemaloja.conection.ConnectionMysql;
 import br.com.sistemaloja.domain.Cliente;
 
-public class ConnectionTest {
+public class ClientTest {
 	
-	private final ConectionMysql conection = new ConectionMysql();
+	private final ConnectionMysql conection = new ConnectionMysql();
 
 	@Test
 	public void testarInsert() {
 		
-		ConectionMysql.getConexaoMySQL();
+		SimpleDateFormat sdf1= new SimpleDateFormat("dd/MM/yyyy"); //você pode usar outras máscaras
+		Date y=new Date(0);
+		System.out.println(sdf1.format(y));
+		
+		ConnectionMysql.getConexaoMySQL();
 		
 		DateFormat df = new SimpleDateFormat("MM-dd-yyyy");
 
-		Cliente cliente = new Cliente(4L, "Joubert", "rua x", "11111111111", LocalDate.now());
+		Cliente cliente = new Cliente(5L, "Joubert", "rua x", "11111111111",y );
 
 		try {
 
 			String sql = "insert into cliente (id, nome, endereco, cpf, data_nascimento) values (?, ?, ?, ?, ?);";
 
-			PreparedStatement pst = ConectionMysql.getConexaoMySQL().prepareStatement(sql);
+			PreparedStatement pst = ConnectionMysql.getConexaoMySQL().prepareStatement(sql);
 
 			pst.setInt(1, cliente.getId().intValue());
 			pst.setString(2, cliente.getNome());
 			pst.setString(3, cliente.getEndereco());
 			pst.setString(4, cliente.getCpf());
-			pst.setDate(5, Date.valueOf(cliente.getDataNascimento()));
+			pst.setDate(5, (Date) cliente.getDataNascimento());
 
 			pst.executeUpdate();
 
@@ -53,7 +57,7 @@ public class ConnectionTest {
 	@Test
 	public void testarSelect() {
 		
-		ConectionMysql.getConexaoMySQL();
+		ConnectionMysql.getConexaoMySQL();
 
 		String query = "select id, nome, cpf, endereco, data_nascimento from cliente where id = 1";
 

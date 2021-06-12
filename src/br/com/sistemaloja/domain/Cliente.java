@@ -1,6 +1,7 @@
 package br.com.sistemaloja.domain;
 
 import java.time.LocalDate;
+import java.util.Date;
 
 public class Cliente {
 	
@@ -8,13 +9,13 @@ public class Cliente {
 	private String nome;
 	private String endereco;
 	private String cpf;
-	private LocalDate dataNascimento;
+	private Date dataNascimento;
 	
 	public Cliente() {
 	
 	}
 
-	public Cliente(Long id,  String nome, String endereco, String cpf, LocalDate dataNascimento) {
+	public Cliente(Long id,  String nome, String endereco, String cpf, Date dataNascimento) {
 		super();
 		this.id = id;
 		this.nome = nome;
@@ -22,8 +23,6 @@ public class Cliente {
 		this.cpf = cpf;
 		this.dataNascimento = dataNascimento;
 	}
-
-
 
 	public Long getId() {
 		return id;
@@ -37,7 +36,7 @@ public class Cliente {
 	public String getCpf() {
 		return cpf;
 	}
-	public LocalDate getDataNascimento() {
+	public Date getDataNascimento() {
 		return dataNascimento;
 	}
 	public void setId(Long id) {
@@ -52,7 +51,7 @@ public class Cliente {
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
-	public void setDataNascimento(LocalDate dataNascimento) {
+	public void setDataNascimento(Date dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
 	@Override
