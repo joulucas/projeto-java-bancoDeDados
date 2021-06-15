@@ -13,9 +13,10 @@ public class Principal {
 		int menu = 0;
 		
 			System.out.println("escolha umas as opções ");
+
 			System.out.println("----  1 para cadastrar um cliente");
 			System.out.println("----  2 ver lista de produtos");
-			System.out.println("----  3 fazer um pedido");				
+			System.out.println("----  3fazer um pedido");				
 		
 		menu = sc.nextInt();
 		
